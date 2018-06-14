@@ -23,12 +23,17 @@ public class Fila {
      *
      * */
     public void enfileira (Object elemento) {
-        this.fila.add(elemento);
+        if (!this.estaCheia()) {
+            this.fila.add(elemento);
+        } else {
+            throw new IllegalArgumentException("Não há mais espaço na Fila!");
+        }
+
     }
 
     /*
      *
-     * Procedimento para desenfileira um item da fila, removendo sempre o elemento cabeça
+     * Procedimento para desenfileirar um item da fila, removendo sempre o elemento do topo
      *
      * */
     public Object desenfileira () {
@@ -53,8 +58,8 @@ public class Fila {
             if (verificaPosicao(posicao)) {
                 /*
                 *
-                * Adiciono o elemento corrente na posição informada no argumento da função na próxima posição,
-                * em seguida, deleto o mesmo, e adiciona naquela posição o novo elemento.
+                * Adiciono o elemento atual da posição informada no argumento da função, na próxima posição,
+                * em seguida, deleto o mesmo; ulterior a essa execução, adiciona naquela posição o novo elemento.
                 *
                 * */
                 this.fila.add(posicao+1, this.fila.get(posicao));
