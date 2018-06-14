@@ -50,8 +50,31 @@ public class HashTable {
         for (int i = 0; i < tamanhoTabela; i++)
             elementos.addAll(this.table.get(i));
 
-
         return elementos;
+    }
+
+    public void obtemTodosElementos (Boolean obtemSemLista) {
+        List<String> elementos = new ArrayList<>();
+        int tamanhoTabela = this.table.size();
+
+        for (int i = 0; i < tamanhoTabela; i++)
+            elementos.addAll(this.table.get(i));
+
+        String anoIngresso, curso, sequencia;
+
+        for (int i = 0; i < elementos.size(); i++) {
+
+            anoIngresso = elementos.get(i).substring(0, 4);
+            curso = elementos.get(i).substring(4, 6);
+            sequencia = elementos.get(i).substring(6, 10);
+
+            System.out.println("Aluno " + (i+1)+": ");
+            System.out.println("Ano de ingresso: " + anoIngresso);
+            System.out.println("Curso: " + curso);
+            System.out.println("Sequência: " + sequencia);
+
+            System.out.print("\n");
+        }
     }
 
     public boolean existeElemento (String elemento) {
