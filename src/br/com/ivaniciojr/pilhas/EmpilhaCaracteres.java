@@ -60,16 +60,13 @@ public class EmpilhaCaracteres {
             * */
             for (char caractere: arranjoCaracteres) {
 
-                // Desconsidera qualquer caractere vazio
-                if (caractere != ' ') {
-                    // Classifica cada caractere
-                    if (verificaCaractere(caractere))
-                        // OPA! É um número
-                        pilhaCaracteres.push(caractere);
-                    else
-                        // OPA! É uma letra
-                        pilhaNumeros.push(caractere);
-                }
+                // Classifica cada caractere
+                if (verificaCaractere(caractere))
+                    // OPA! É um número
+                    pilhaCaracteres.push(caractere);
+                else
+                    // OPA! É uma letra
+                    pilhaNumeros.push(caractere);
             }
 
         } else System.out.println("ERRO! Digite algum arranjo de letras e/ou números.");
