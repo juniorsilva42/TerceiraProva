@@ -5,8 +5,12 @@ import java.util.List;
 
 public class Fila {
 
-    private List<Object> fila = new ArrayList<Object>(100);
+    private List<Object> fila;
     private int capacidade = 100;
+
+    public Fila () {
+        fila = new ArrayList<Object>(capacidade);
+    }
 
     public void enfileira (Object elemento) {
         this.fila.add(elemento);
