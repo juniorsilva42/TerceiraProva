@@ -1,5 +1,6 @@
 package br.com.ivaniciojr.filas;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,15 @@ public class Fila {
 
     public Object desenfileira () {
         return this.fila.remove(0);
+    }
+
+    public void furaFila (Object valor, int posicao) {
+
+        if (!this.estaCheia()) {
+            this.fila.add(posicao+1, this.fila.get(posicao));
+            fila.remove(posicao);
+            this.fila.add(posicao, valor);
+        }
     }
 
     public boolean estaVazia () {

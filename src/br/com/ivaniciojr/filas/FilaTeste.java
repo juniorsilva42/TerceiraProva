@@ -17,9 +17,17 @@ public class FilaTeste {
         fila.enfileira("Elemento I");
         fila.enfileira("Elemento J");
 
+        System.out.println(fila.toString());
+
+        fila.furaFila("Furei a fila! :)", 9);
+
+        System.out.println(fila.toString());
+
+        /*
         for (int i = 0; i < 10; i++) {
             System.out.println(fila.toString());
             fila.desenfileira();
         }
+        */
     }
 }
