@@ -5,12 +5,8 @@ import java.util.List;
 
 public class Fila {
 
-    private List<Object> fila;
+    private List<Object> fila = new ArrayList<Object>(100);
     private int capacidade = 100;
-
-    public void Fila () {
-        fila = new ArrayList<Object>(capacidade);
-    }
 
     public void enfileira (Object elemento) {
         this.fila.add(elemento);
@@ -24,13 +20,16 @@ public class Fila {
         return this.fila.size() == 0;
     }
 
+    public boolean estaCheia () {
+        return this.fila.size() == 100;
+    }
+
     public String toString () {
 
         StringBuilder s = new StringBuilder();
 
-        for (int i = 0; i < fila.size(); i++) {
-            s.append(fila.get(i));
-        }
+        for (int i = 0; i < fila.size(); i++)
+            s.append(this.fila.get(i)+"\n");
 
         return s.toString();
     }

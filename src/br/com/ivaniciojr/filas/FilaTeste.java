@@ -13,5 +13,14 @@ public class FilaTeste {
         fila.enfileira("Elemento E");
 
         System.out.println(fila.toString());
+
+        fila.desenfileira();
+
+        System.out.println(fila.toString());
+
+        fila.desenfileira();
+
+        System.out.println(fila.toString());
+
     }
 }
