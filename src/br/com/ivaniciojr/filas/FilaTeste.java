@@ -19,15 +19,14 @@ public class FilaTeste {
 
         System.out.println(fila.toString());
 
-        fila.furaFila("Furei a fila! :)", 9);
+        fila.furaFila("Furei a fila! :)", 7);
 
         System.out.println(fila.toString());
 
-        /*
+        // Simulando a desenfileiração até o elemento "Furei a fila" chegar na sua vez.
         for (int i = 0; i < 10; i++) {
             System.out.println(fila.toString());
             fila.desenfileira();
         }
-        */
     }
 }

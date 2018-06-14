@@ -1,6 +1,5 @@
 package br.com.ivaniciojr.filas;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,15 +17,23 @@ public class Fila {
     }
 
     public Object desenfileira () {
-        return this.fila.remove(0);
+        if (!this.estaVazia()) {
+            return this.fila.remove(0);
+        } else {
+            throw new IllegalArgumentException("Não há elementos na Fila!");
+        }
     }
 
     public void furaFila (Object valor, int posicao) {
 
         if (!this.estaCheia()) {
-            this.fila.add(posicao+1, this.fila.get(posicao));
-            fila.remove(posicao);
-            this.fila.add(posicao, valor);
+            if (verificaPosicao(posicao)) {
+                this.fila.add(posicao+1, this.fila.get(posicao));
+                fila.remove(posicao);
+                this.fila.add(posicao, valor);
+            } else {
+                throw new IllegalArgumentException("Posição inválida!");
+            }
         }
     }
 
@@ -36,6 +43,13 @@ public class Fila {
 
     public boolean estaCheia () {
         return this.fila.size() == 100;
+    }
+
+    public boolean verificaPosicao (int posicao) {
+        if (!(posicao >= 0 && posicao < this.fila.size())) {
+            return false;
+        }
+        return true;
     }
 
     public String toString () {
