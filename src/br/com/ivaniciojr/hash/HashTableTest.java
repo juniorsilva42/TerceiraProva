@@ -10,14 +10,24 @@ public class HashTableTest {
 
         hashTable.adiciona("2017043003");
         hashTable.adiciona("2018032009");
+        hashTable.adiciona("2016062010");
 
         List<String> elementos = hashTable.obtemTodosElementos();
 
+        String anoIngresso, curso, sequencia;
+
         for (int i = 0; i < elementos.size(); i++) {
 
-            System.out.println(elementos.get(i));
-        }
+            anoIngresso = elementos.get(i).substring(0, 4);
+            curso = elementos.get(i).substring(4, 6);
+            sequencia = elementos.get(i).substring(6, 10);
 
-        System.out.println("\n");
+            System.out.println("Aluno " + (i+1)+": ");
+            System.out.println("Ano de ingresso: " + anoIngresso);
+            System.out.println("Curso: " + curso);
+            System.out.println("Sequência: " + sequencia);
+
+            System.out.print("\n");
+        }
     }
 }
