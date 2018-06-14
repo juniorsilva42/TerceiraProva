@@ -36,25 +36,38 @@ public class EmpilhaCaracteres {
         desempilha(pilhaNumeros);
     }
 
-    public static boolean verificaCaractere (char c) {
-
-        return !Character.isDigit(c);
-    }
-
+    /*
+    *
+    * Procedimento para empilhar uma dado arranjo e classificar cada caractere como sendo dígito ou número.
+    *
+    * @author Ivanicio Jr
+    * @arguments String entrada
+    * @return void
+    *
+    * */
     public static void empilha (String entrada) {
 
+        // Caso a entrada seja diferente de vazia
         if (!entrada.isEmpty()) {
 
+            // Quebra o arranjo dado pela entrada em um array de caracteres
             char[] arranjoCaracteres = String.valueOf(entrada).toCharArray();
 
+            /*
+            *
+            * Percorre o array de caracteres classificando cada um como letra ou número
+            *
+            * */
             for (char caractere: arranjoCaracteres) {
 
+                // Desconsidera qualquer caractere vazio
                 if (caractere != ' ') {
+                    // Classifica cada caractere
                     if (verificaCaractere(caractere))
-                        // É um número
+                        // OPA! É um número
                         pilhaCaracteres.push(caractere);
                     else
-                        // Caso contrário, é uma letra
+                        // OPA! É uma letra
                         pilhaNumeros.push(caractere);
                 }
             }
@@ -62,8 +75,18 @@ public class EmpilhaCaracteres {
         } else System.out.println("ERRO! Digite algum arranjo de letras e/ou números.");
     }
 
+    /*
+     *
+     * Procedimento para desempilhar uma dada uma pilha
+     *
+     * @author Ivanicio Jr
+     * @arguments Stack<Character> pilha
+     * @return void
+     *
+     * */
     public static void desempilha (Stack<Character> pilha) {
 
+        // Armazena logo o tamanho da pilha na memória. Evita ter que calcular toda vez que o loop for executado
         int tamanhoPilha = pilha.size();
         char[] auxiliar = new char[tamanhoPilha];
 
@@ -73,10 +96,24 @@ public class EmpilhaCaracteres {
         }
 
         // Faz um loop reverso e coloca todos os caracteres na sua devida ordem
-        for (int i = tamanhoPilha-1; i >= 0 ; i--) {
+        for (int i = tamanhoPilha - 1; i >= 0 ; i--) {
             System.out.print(auxiliar[i]);
         }
 
         System.out.print("\n");
+    }
+
+    /*
+     *
+     * Procedimento para classificar um dado caractere se é um dígito ou um número
+     *
+     * @author Ivanicio Jr
+     * @arguments char c
+     * @return boolean
+     *
+     * */
+    public static boolean verificaCaractere (char c) {
+
+        return !Character.isDigit(c);
     }
 }
