@@ -19,7 +19,6 @@ public class EmpilhaCaracteres {
         /*
          *
          * Classifica como letras e números, e empilha caracteres de um dado arranjo
-         *
          * */
         empilha(entrada);
 
@@ -27,23 +26,26 @@ public class EmpilhaCaracteres {
         *
         * Desempilha a pilha de caracteres
         * */
+        System.out.println("\nPilha de caracteres desempilhada: ");
         desempilha(pilhaCaracteres);
+
 
         /*
          *
          * Desempilha a pilha de números
          * */
+        System.out.println("\nPilha de números desempilhada: ");
         desempilha(pilhaNumeros);
     }
 
     /*
-    *
-    * Procedimento para empilhar uma dado arranjo e classificar cada caractere como sendo dígito ou número.
-    *
-    * @author Ivanicio Jr
-    * @arguments String entrada
-    * @return void
-    *
+     *
+     * Procedimento para empilhar uma dado arranjo e classificar cada caractere como sendo dígito ou número.
+     *
+     * @author Ivanicio Jr
+     * @arguments String entrada
+     * @return void
+     *
     * */
     public static void empilha (String entrada) {
 
