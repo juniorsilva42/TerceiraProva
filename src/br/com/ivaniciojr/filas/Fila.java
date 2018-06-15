@@ -19,10 +19,11 @@ public class Fila {
 
     /*
      *
-     * Procedimento para enfileirar um item na fila, adiciona o elemento no fim da ArrayList
+     * Procedimento para enfileirar um item na fila. (adiciona o elemento no fim da ArrayList)
      *
      * */
     public void enfileira (Object elemento) {
+        // Se há espaço na fila...
         if (!this.estaCheia()) {
             this.fila.add(elemento);
         } else {
@@ -47,7 +48,7 @@ public class Fila {
 
     /*
      *
-     * Procedimento para furar a fila, ou seja, inserir um elemento na lista numa dada posição.
+     * Procedimento para furar a fila, ou seja, inserir um elemento numa dada posição.
      *
      * */
     public void furaFila (Object valor, int posicao) {
@@ -58,8 +59,9 @@ public class Fila {
             if (verificaPosicao(posicao)) {
                 /*
                 *
-                * Adiciono o elemento atual da posição informada no argumento da função, na próxima posição,
-                * em seguida, deleto o mesmo; ulterior a essa execução, adiciona naquela posição o novo elemento.
+                * Adiciona o elemento da posição informada no argumento da função, na posição seguinte,
+                * em seguida, deleto o mesmo; ulterior a essa execução, adiciona naquela posição o NOVO elemento,
+                * passado no argumento da função.
                 *
                 * */
                 this.fila.add(posicao+1, this.fila.get(posicao));

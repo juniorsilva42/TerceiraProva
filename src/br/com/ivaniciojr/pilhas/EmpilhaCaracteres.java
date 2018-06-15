@@ -29,7 +29,6 @@ public class EmpilhaCaracteres {
         System.out.println("\nPilha de caracteres desempilhada: ");
         desempilha(pilhaCaracteres);
 
-
         /*
          *
          * Desempilha a pilha de números
