@@ -13,6 +13,8 @@ public class HashTableTest {
         hashTable.adiciona("2016062010");
         hashTable.adiciona("2019032020");
 
+        // Obtem todos os elementos. Valor true para obter sem a lista.
+        // Preferível assim, melhor para abstrair a classse sem sujar o código de testes e engessar o uso do retorno
         hashTable.obtemTodosElementos(true);
     }
 }
